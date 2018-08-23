@@ -1,5 +1,5 @@
 defmodule Price do
 
-  defstruct [value: 0]
+  defstruct [value: 0, text: ""]
 
 end

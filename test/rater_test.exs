@@ -27,7 +27,12 @@ defmodule RaterTest do
       ]}
 
   test "rates the product" do
-    expected_rate = %Price{value: 1250}
+    expected_rate = [
+              %Price{text: "Base pack price", value: 1000},
+              %Price{text: "Adding the large male/female tag option", value: 200},
+              %Price{text: "Adding Custom Text to the tag", value: 50},
+              %Price{text: "Nait Levy", value: 90}
+            ]
     result = Rater.call(@tree)
 
     assert result == expected_rate
