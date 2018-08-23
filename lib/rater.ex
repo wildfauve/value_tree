@@ -1,11 +1,12 @@
 defmodule Rater do
 
+  # Flatten the tree into a %Val{} list
+  # Use the root %Val{} as the base price and the location of the rules
+  # The rate by applying the rules to the ids.
   def call(tree) do
     Idify.call(tree)
     |> rating(rules(tree.tuple), base_rate(tree.tuple))
   end
-
-  # List.foldl([5, 5], 10, fn x, acc -> x + acc end)
 
   defp rating(ids, rules, base_price) do
     List.foldl(rules, [base_price], fn rule, price -> option_rating(rule, ids, price ) end)
