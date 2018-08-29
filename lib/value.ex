@@ -1,5 +1,5 @@
 defmodule Val do
 
-  defstruct [id: "", value: ""]
+  defstruct [id: "", value: "", type: ""]
 
 end

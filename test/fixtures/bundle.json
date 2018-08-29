@@ -1,0 +1,602 @@
+{
+  "id" : "/product/products/allflex-premium-calf-pack",
+  "name" : "Allflex Premium Calf Pack",
+  "relation" : "root",
+  "product_type" : "bundle",
+  "offering_type": "urn:lic:id:offering_type:good",
+  "family": "urn:lic:id:product_family:calf_pack",
+  "supplier_url": "https://api1.accp.mindainfo.io/supplier/suppliers/allflex",
+  "description": "The premium calf pack contains both a Birth ID tag and a HDX NAIT EID tag",
+  "configuration_requirements" : [
+    {
+      "@type": "config_requirement",
+      "name": "responsible_party",
+      "id": "urn:lic:predicate:responsible_party",
+      "display_name": "Responsible party to be selected",
+      "description": "Select the responsible party",
+      "mandatory": true,
+      "configurable": false,
+      "select_semantic": "not_predefined",
+      "allow_blank": false,
+      "allow_multiple": false,
+      "selections": [],
+      "enumerations": []
+    },
+    {
+      "@type": "config_requirement",
+      "name": "owning_party",
+      "id": "urn:lic:predicate:owning_party",
+      "display_name": "Owning party to be selected",
+      "description": "Select the owning party",
+      "mandatory": true,
+      "configurable": false,
+      "select_semantic": "not_predefined",
+      "allow_blank": false,
+      "allow_multiple": false,
+      "selections": [],
+      "enumerations": []
+    },
+    {
+      "@type": "config_requirement",
+      "name": "ag_op",
+      "id": "urn:lic:predicate:assign_to_operation",
+      "display_name": "Agricultural operation for the configuration",
+      "description": "Select the agricultural operation",
+      "mandatory": true,
+      "configurable": false,
+      "select_semantic": "not_predefined",
+      "allow_blank": false,
+      "allow_multiple": false,
+      "selections": [],
+      "enumerations": []
+    },
+    {
+      "@type": "config_requirement",
+      "name": "animal_timeline_group",
+      "id": "urn:lic:id:predicate:animal_timeline_group",
+      "display_name": "Animal timeline group for Birth Id allocation",
+      "description": "Select the animal timeline group for birth Id allocation",
+      "mandatory": true,
+      "configurable": false,
+      "select_semantic": "not_predefined",
+      "allow_blank": false,
+      "allow_multiple": false,
+      "selections": [],
+      "enumerations": []
+    }
+  ],
+  "default_characteristics" : {
+    "weight": {
+      "value": "40",
+      "unit_code": "GRM"
+    },
+    "width": {
+      "value": "1",
+      "unit_code": "CMT"
+    },
+    "height": {
+      "value": "1",
+      "unit_code": "CMT"
+    },
+    "depth": {
+      "value": "1",
+      "unit_code": "CMT"
+    }
+  },
+  "prices": [
+    {
+      "@type": "urn:lic:product:variant:price:retail",
+      "price": "5.00",
+      "price_currency": "NZD",
+      "value_added_tax_included": false,
+      "value_added_tax_rate": "0.15",
+      "eligible_quantity": {
+        "unit_code": "unit",
+        "unit_text": "5.00 per pack"
+      }
+    },
+    {
+      "@type": "urn:lic:product:variant:price:cost",
+      "price": "4.00",
+      "price_currency": "NZD",
+      "value_added_tax_included": false,
+      "value_added_tax_rate": "0.15",
+      "eligible_quantity": {}
+    }
+  ],
+  "variant_option_types" : [],
+  "variants" : [],
+  "products" : [
+    {
+      "id" : "/product/products/allflex-tamperproof-tag",
+      "relation" : "bundled",
+      "product_type" : "product",
+      "name": "Male / Female Tamperproof Birthid Tag",
+      "offering_type": "urn:lic:id:offering_type:good",
+      "family": "urn:lic:id:product_family:tag",
+      "description": "Male / Female Tamperproof Birthid Tag",
+      "invoice_description": "Male / Female Tamperproof Birthid Tag",
+      "supplier_url": "https://api1.accp.mindainfo.io/supplier/suppliers/allflex",
+      "variant_option_types" : [],
+      "variants" : [],
+      "products" : [
+        {
+          "id" : "/product/products/allflex-tamperproof-tag/components/tamperproof-female-tag",
+          "relation" : "made_up_of",
+          "product_type" : "component",
+          "name": "Female Tamperproof Birthid Tag",
+          "description": "Female Tamperproof Birthid Tag",
+          "configuration_requirements" : [
+            {
+              "@type": "config_requirement",
+              "name": "birth_id",
+              "id": "urn:lic:id:confreq:birth_id",
+              "display_name": "Birth ID",
+              "description": "Select an approach for obtaining Birth Ids",
+              "mandatory": true,
+              "configurable": true,
+              "select_semantic": "exclusive",
+              "allow_blank": false,
+              "allow_multiple": false,
+              "selections": [
+                {
+                  "@type": "selection",
+                  "name": "birth_id",
+                  "identity": "urn:lic:id:assignfunc:birth_id_allocation_function",
+                  "display_name": "Allocate new birth identifiers starting at the first available sequence or a number you provide",
+                  "prices": [],
+                  "form_inputs": [
+                    {
+                      "@type": "form_input",
+                      "name": "request_id",
+                      "identity": "urn:lic:prop:birth_ids:request_id",
+                      "display_name": "",
+                      "html_data_type": "hidden",
+                      "read_only": false
+                    },
+                    {
+                      "@type": "form_input",
+                      "name": "year",
+                      "identity": "urn:lic:prop:birth_ids:year",
+                      "display_name": "Enter the year for your participant code",
+                      "html_data_type": "text",
+                      "read_only": false
+                    },
+                    {
+                      "@type": "form_input",
+                      "name": "quantity",
+                      "identity": "urn:lic:prop:birth_ids:quantity",
+                      "display_name": "Number of IDs to allocate",
+                      "html_data_type": "text",
+                      "read_only": true
+                    }
+                  ]
+                }
+              ],
+              "enumerations": []
+            }
+          ],
+          "variant_option_types" : [
+            {
+              "id" : "urn:lic:products:colour",
+              "classification" : "colour",
+              "specifications" : [
+                {
+                  "id" : "urn:lic:products:colour:red",
+                  "display_name": "Red",
+                  "characteristics" : {
+                    "hex" : "#000000"
+                  }
+                },
+                {
+                  "id" : "urn:lic:products:colour:yellow",
+                  "display_name": "Yellow",
+                  "characteristics" : {
+                    "hex" : "#000000"
+                  }
+                }
+              ]
+            },
+            {
+              "id" : "urn:lic:products:size",
+              "classification" : "size",
+              "specifications" : [
+                {
+                  "id" : "urn:lic:products:size:medium",
+                  "display_name" : "Medium",
+                  "characteristics" : {
+                    "width": {
+                      "value": "1",
+                      "unit_code": "CMT"
+                    },
+                    "height": {
+                      "value": "1",
+                      "unit_code": "CMT"
+                    },
+                    "depth": {
+                      "value": "1",
+                      "unit_code": "CMT"
+                    }
+                  }
+                },
+                {
+                  "id" : "urn:lic:products:size:large",
+                  "display_name" : "Large",
+                  "characteristics" : {
+                    "width": {
+                      "value": "1",
+                      "unit_code": "CMT"
+                    },
+                    "height": {
+                      "value": "1",
+                      "unit_code": "CMT"
+                    },
+                    "depth": {
+                      "value": "1",
+                      "unit_code": "CMT"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "variants" : [
+            {
+              "id" : "large_yellow",
+              "name" : "Large Yellow",
+              "is_default_product_variant": true,
+              "options" : [
+                {"classification" : "urn:lic:products:colour", "specification" : "red"},
+                {"classification" : "urn:lic:products:size", "specification" : "medium"}
+              ]
+            },
+            {
+              "id" : "medium_yellow",
+              "name" : "Medium Yellow",
+              "options" : [
+                {"classification" : "urn:lic:products:colour", "specification" : "yellow"},
+                {"classification" : "urn:lic:products:size", "specification" : "medium"}
+              ]
+            },
+            {
+              "id" : "large_red",
+              "name" : "Large Red",
+              "options" : [
+                {"classification" : "urn:lic:products:colour", "specification" : "red"},
+                {"classification" : "urn:lic:products:size", "specification" : "large"}
+              ]
+            },
+            {
+              "id" : "medium_red",
+              "name" : "Medium Red",
+              "options" : [
+                {"classification" : "urn:lic:products:colour", "specification" : "red"},
+                {"classification" : "urn:lic:products:size", "specification" : "medium"}
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "/product/products/allflex-tamperproof-tag/components/tamperproof-male-tag",
+          "relation" : "made_up_of",
+          "product_type" : "component",
+          "name": "Male Tamperproof Birthid Tag",
+          "description": "Male Tamperproof Birthid Tag",
+          "configuration_requirements" : [
+            {
+              "@type": "config_requirement",
+              "name": "birth_id",
+              "id": "urn:lic:id:confreq:birth_id",
+              "display_name": "Birth ID",
+              "description": "Select an approach for obtaining Birth Ids",
+              "mandatory": true,
+              "configurable": true,
+              "select_semantic": "exclusive",
+              "allow_blank": false,
+              "allow_multiple": false,
+              "selections": [
+                {
+                  "@type": "selection",
+                  "name": "birth_id",
+                  "identity": "urn:lic:id:assignfunc:birth_id_allocation_function",
+                  "display_name": "Allocate new birth identifiers starting at the first available sequence or a number you provide",
+                  "prices": [],
+                  "form_inputs": [
+                    {
+                      "@type": "form_input",
+                      "name": "request_id",
+                      "identity": "urn:lic:prop:birth_ids:request_id",
+                      "display_name": "",
+                      "html_data_type": "hidden",
+                      "read_only": false
+                    },
+                    {
+                      "@type": "form_input",
+                      "name": "year",
+                      "identity": "urn:lic:prop:birth_ids:year",
+                      "display_name": "Enter the year for your participant code",
+                      "html_data_type": "text",
+                      "read_only": false
+                    },
+                    {
+                      "@type": "form_input",
+                      "name": "quantity",
+                      "identity": "urn:lic:prop:birth_ids:quantity",
+                      "display_name": "Number of IDs to allocate",
+                      "html_data_type": "text",
+                      "read_only": true
+                    }
+                  ]
+                }
+              ],
+              "enumerations": []
+            }
+          ],
+          "variant_option_types" : [
+            {
+              "id" : "urn:lic:products:colour",
+              "classification" : "colour",
+              "specifications" : [
+                {
+                  "id" : "urn:lic:products:colour:red",
+                  "display_name": "Red",
+                  "characteristics" : {
+                    "hex" : "#000000"
+                  }
+                },
+                {
+                  "id" : "urn:lic:products:colour:yellow",
+                  "display_name": "Yellow",
+                  "characteristics" : {
+                    "hex" : "#000000"
+                  }
+                }
+              ]
+            },
+            {
+              "id" : "urn:lic:products:size",
+              "classification" : "size",
+              "specifications" : [
+                {
+                  "id" : "urn:lic:products:size:medium",
+                  "display_name" : "Medium",
+                  "characteristics" : {
+                    "width": {
+                      "value": "1",
+                      "unit_code": "CMT"
+                    },
+                    "height": {
+                      "value": "1",
+                      "unit_code": "CMT"
+                    },
+                    "depth": {
+                      "value": "1",
+                      "unit_code": "CMT"
+                    }
+                  }
+                },
+                {
+                  "id" : "urn:lic:products:size:large",
+                  "display_name" : "Large",
+                  "characteristics" : {
+                    "width": {
+                      "value": "1",
+                      "unit_code": "CMT"
+                    },
+                    "height": {
+                      "value": "1",
+                      "unit_code": "CMT"
+                    },
+                    "depth": {
+                      "value": "1",
+                      "unit_code": "CMT"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "variants" : [
+            {
+              "id" : "large_yellow",
+              "name" : "Large Yellow",
+              "is_default_product_variant": true,
+              "options" : [
+                {"classification" : "urn:lic:products:colour", "specification" : "red"},
+                {"classification" : "urn:lic:products:size", "specification" : "medium"}
+              ]
+            },
+            {
+              "id" : "medium_yellow",
+              "name" : "Medium Yellow",
+              "options" : [
+                {"classification" : "urn:lic:products:colour", "specification" : "yellow"},
+                {"classification" : "urn:lic:products:size", "specification" : "medium"}
+              ]
+            },
+            {
+              "id" : "large_red",
+              "name" : "Large Red",
+              "options" : [
+                {"classification" : "urn:lic:products:colour", "specification" : "red"},
+                {"classification" : "urn:lic:products:size", "specification" : "large"}
+              ]
+            },
+            {
+              "id" : "medium_red",
+              "name" : "Medium Red",
+              "options" : [
+                {"classification" : "urn:lic:products:colour", "specification" : "red"},
+                {"classification" : "urn:lic:products:size", "specification" : "medium"}
+              ]
+            }            
+          ],
+          "configuration_requirements" : []
+        }
+      ]
+    },
+    {
+      "id" : "/product/products/hdx-tamperproof-cattle-deer-rfid",
+      "relation" : "bundled",
+      "name": "Allflex HDX Nait Eid Tag",
+      "product_type" : "product",
+      "offering_type": "urn:lic:id:offering_type:good",
+      "family": "urn:lic:id:product_family:tag",
+      "description": "Allflex HDX Nait Eid Tag",
+      "invoice_description": "Allflex HDX Nait Eid Tag",
+      "supplier_url": "https://api1.accp.mindainfo.io/supplier/suppliers/allflex",
+      "configuration_requirements" : [
+        {
+          "@type": "config_requirement",
+          "name": "species",
+          "id": "urn:lic:id:confreq:species",
+          "display_name": "Tag species, required to be provided to NAIT",
+          "description": "Select the specific species declaration to NAIT",
+          "mandatory": true,
+          "configurable": false,
+          "select_semantic": "",
+          "allow_blank": false,
+          "allow_multiple": false,
+          "selections": [],
+          "enumerations": [
+            {
+              "@type": "enumeration",
+              "name": "cattle_species",
+              "identity": "urn:lic:agriop:species:cattle",
+              "display_name": "cattle",
+              "prices": [],
+              "identifiers": []
+            },
+            {
+              "@type": "enumeration",
+              "name": "deer_species",
+              "identity": "urn:lic:agriop:species:deer",
+              "display_name": "deer",
+              "prices": [],
+              "identifiers": []
+            }
+          ]
+        },
+        {
+          "@type": "config_requirement",
+          "name": "nait_location_number",
+          "id": "urn:lic:id:confreq:nait_number",
+          "display_name": "NAIT number",
+          "description": "Select a declaration for the location of the animals",
+          "mandatory": true,
+          "configurable": true,
+          "select_semantic": "exclusive",
+          "allow_blank": false,
+          "allow_multiple": false,
+          "selections": [
+            {
+              "@type": "selection",
+              "name": "nait_number_custom_text",
+              "identity": "urn:lic:id:assignfunc:string_join_function",
+              "display_name": "Enter the NAIT Number associated with the tags",
+              "prices": [],
+              "form_inputs": [
+                {
+                  "@type": "form_input",
+                  "name": "nait_number_custom_text",
+                  "identity": "urn:lic:prop:nait_number",
+                  "display_name": "Enter the NAIT number for these tags",
+                  "html_data_type": "text",
+                  "read_only": false
+                }
+              ]
+            }
+          ],
+          "enumerations": []
+        },
+        {
+          "@type": "config_requirement",
+          "name": "nait_tag_prod_type",
+          "id": "urn:lic:id:confreq:nait_tag_prod_type",
+          "display_name": "Production type",
+          "description": "Select a declaration for the production type of all animals",
+          "mandatory": true,
+          "configurable": false,
+          "select_semantic": "exclusive",
+          "allow_blank": false,
+          "allow_multiple": false,
+          "selections": [],
+          "enumerations": [
+            {
+              "@type": "enumeration",
+              "name": "nait_tag_prod_type_dairy",
+              "identity": "urn:nait:ids:production_type:dairy",
+              "display_name": "dairy",
+              "prices": [],
+              "identifiers": []
+            },
+            {
+              "@type": "enumeration",
+              "name": "nait_tag_prod_type_beef",
+              "identity": "urn:nait:ids:production_type:beef",
+              "display_name": "beef",
+              "prices": [],
+              "identifiers": []
+            },
+            {
+              "@type": "enumeration",
+              "name": "nait_tag_prod_type_velvet",
+              "identity": "urn:nait:ids:production_type:velvet",
+              "display_name": "velvet",
+              "prices": [],
+              "identifiers": []
+            },
+            {
+              "@type": "enumeration",
+              "name": "nait_tag_prod_type_venison",
+              "identity": "urn:nait:ids:production_type:venison",
+              "display_name": "venison",
+              "prices": [],
+              "identifiers": []
+            },
+            {
+              "@type": "enumeration",
+              "name": "nait_tag_prod_type_trophy",
+              "identity": "urn:nait:ids:production_type:trophy",
+              "display_name": "trophy",
+              "prices": [],
+              "identifiers": []
+            }
+          ]
+        }
+      ],
+      "variant_option_types" : [],
+      "variants" : [],
+      "products" : [
+        {
+          "id" : "/product/products/allflex-tamperproof-tag/components/hdx_nait_tamperproof_cattle_female_eid",
+          "relation" : "made_up_of",
+          "name": "Allflex EID Female Component",
+          "product_type" : "component",
+          "offering_type": "urn:lic:id:offering_type:good",
+          "family": "urn:lic:id:product_family:tag",
+          "description": "Allflex HDX Nait Eid Female Component",
+          "invoice_description": "Allflex HDX Nait Eid Female Component",
+          "supplier_url": "https://api1.accp.mindainfo.io/supplier/suppliers/allflex",
+          "configuration_requirements" : [],
+          "variant_option_types" : [],
+          "variants" : []
+        },
+        {
+          "id" : "/product/products/allflex-tamperproof-tag/components/nait_long_stem_male_button",
+          "relation" : "made_up_of",
+          "name": "Allflex EID Female Component",
+          "product_type" : "component",
+          "offering_type": "urn:lic:id:offering_type:good",
+          "family": "urn:lic:id:product_family:tag",
+          "description": "Allflex HDX Nait Eid Male Long Stem Button Component",
+          "invoice_description": "Allflex HDX Nait Eid Male Long Stem Button Component",
+          "supplier_url": "https://api1.accp.mindainfo.io/supplier/suppliers/allflex",
+          "configuration_requirements" : [],
+          "variant_option_types" : [],
+          "variants" : []
+        }
+      ]
+    }
+  ]
+}
