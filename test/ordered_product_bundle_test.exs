@@ -1,4 +1,4 @@
-defmodule ProductIdifyTest do
+defmodule OrderedProductIdifyTest do
   use ExUnit.Case
   # doctest ValueTree
 
@@ -7,13 +7,19 @@ defmodule ProductIdifyTest do
          {:ok, json} <- Poison.decode(body), do: {:ok, json}
   end
 
-  test 'Product-idify' do
+  test 'Ordered Product-idify' do
 
-    {_, bundle} = get_json("test/fixtures/premium_pack_example.json")
+    {_, bundle} = get_json("test/fixtures/ordered_premium_pack_example.json")
 
-    identity = ProductIdify.call(bundle)
+    identity = OrderedProductIdify.call(bundle)
                |> Idify.flatten
                |> Enum.map(fn x -> x.id end)
+
+               require IEx
+               IEx.pry()
+
+
+
 
     expected_result = ["/product/products/allflex-premium-calf-pack",
                        "urn:lic:predicate:responsible_party",

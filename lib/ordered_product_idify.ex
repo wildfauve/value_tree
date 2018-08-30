@@ -1,4 +1,4 @@
-defmodule ProductIdify do
+defmodule OrderedProductIdify do
 
   alias Value
 
@@ -9,7 +9,8 @@ defmodule ProductIdify do
   defp products([p|xs]) do
     [
       name_value(p, :product),
-      non_recursive_collection({:variants, p["variant"]}) ++ non_recursive_collection({:config_requirement, p["configuration_requirements"]}) ++ products(p["products"]) ++ products(xs)
+      name_value(p["selected_variant"], :selected_variant),
+      non_recursive_collection({:config_property, p["configuration_properties"]}) ++ products(p["products"]) ++ products(xs)
     ]
   end
   defp products([]), do: []

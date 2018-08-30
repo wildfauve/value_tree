@@ -402,8 +402,8 @@
               "name" : "Large Yellow",
               "is_default_product_variant": true,
               "options" : [
-                {"classification" : "urn:lic:products:colour", "specification" : "red"},
-                {"classification" : "urn:lic:products:size", "specification" : "medium"}
+                {"classification" : "urn:lic:products:colour", "specification" : "yellow"},
+                {"classification" : "urn:lic:products:size", "specification" : "large"}
               ]
             },
             {
@@ -429,7 +429,7 @@
                 {"classification" : "urn:lic:products:colour", "specification" : "red"},
                 {"classification" : "urn:lic:products:size", "specification" : "medium"}
               ]
-            }            
+            }
           ],
           "configuration_requirements" : []
         }

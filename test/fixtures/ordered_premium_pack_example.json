@@ -1,0 +1,194 @@
+{
+  "id" : "/product/products/allflex-premium-calf-pack",
+  "name" : "Allflex Premium Calf Pack",
+  "relation" : "root",
+  "product_type" : "bundle",
+  "offering_type": "urn:lic:id:offering_type:good",
+  "family": "urn:lic:id:product_family:calf_pack",
+  "supplier_url": "https://api1.accp.mindainfo.io/supplier/suppliers/allflex",
+  "description": "The premium calf pack contains both a Birth ID tag and a HDX NAIT EID tag",
+  "default_characteristics" : {
+    "weight": {
+      "value": "40",
+      "unit_code": "GRM"
+    },
+    "width": {
+      "value": "1",
+      "unit_code": "CMT"
+    },
+    "height": {
+      "value": "1",
+      "unit_code": "CMT"
+    },
+    "depth": {
+      "value": "1",
+      "unit_code": "CMT"
+    }
+  },
+  "prices": [
+    {
+      "@type": "urn:lic:product:variant:price:retail",
+      "price": "5.00",
+      "price_currency": "NZD",
+      "value_added_tax_included": false,
+      "value_added_tax_rate": "0.15",
+      "eligible_quantity": {
+        "unit_code": "unit",
+        "unit_text": "5.00 per pack"
+      }
+    },
+    {
+      "@type": "urn:lic:product:variant:price:cost",
+      "price": "4.00",
+      "price_currency": "NZD",
+      "value_added_tax_included": false,
+      "value_added_tax_rate": "0.15",
+      "eligible_quantity": {}
+    }
+  ],
+  "selected_variant" : {},
+  "products" : [
+    {
+      "id" : "/product/products/allflex-tamperproof-tag",
+      "relation" : "bundled",
+      "product_type" : "product",
+      "name": "Male / Female Tamperproof Birthid Tag",
+      "offering_type": "urn:lic:id:offering_type:good",
+      "family": "urn:lic:id:product_family:tag",
+      "description": "Male / Female Tamperproof Birthid Tag",
+      "invoice_description": "Male / Female Tamperproof Birthid Tag",
+      "supplier_url": "https://api1.accp.mindainfo.io/supplier/suppliers/allflex",
+      "products" : [
+        {
+          "id" : "/product/products/allflex-tamperproof-tag/components/tamperproof-female-tag",
+          "relation" : "made_up_of",
+          "product_type" : "component",
+          "name": "Female Tamperproof Birthid Tag",
+          "description": "Female Tamperproof Birthid Tag",
+          "configuration_properties" : [
+            {
+              "@type" : "property",
+              "id" : "urn:lic:id:confreq:birth_id",
+              "generating_function" : "urn:lic:id:assignfunc:birth_id_allocation_function",
+              "name" : "Birth ID",
+              "value" : "KGCY-2018-963,KGCY-2018-964,KGCY-2018-965"
+            }
+          ],
+          "selected_variant" : {
+            "id" : "large_yellow",
+            "name" : "Large Yellow",
+            "options" : [
+              {"classification" : "urn:lic:products:colour", "specification" : "Yellow"},
+              {"classification" : "urn:lic:products:size", "specification" : "Large"}
+            ]
+          }
+        },
+        {
+          "id" : "/product/products/allflex-tamperproof-tag/components/tamperproof-male-tag",
+          "relation" : "made_up_of",
+          "product_type" : "component",
+          "name": "Male Tamperproof Birthid Tag",
+          "description": "Male Tamperproof Birthid Tag",
+          "configuration_properties" : [
+            {
+              "@type" : "property",
+              "id" : "urn:lic:id:confreq:birth_id",
+              "generating_function" : "urn:lic:id:assignfunc:birth_id_allocation_function",
+              "display_name" : "Birth ID",
+              "value" : "KGCY-2018-963,KGCY-2018-964,KGCY-2018-965"
+            }
+          ],
+          "selected_variant" : {
+            "id" : "large_yellow",
+            "name" : "Large Yellow",
+            "options" : [
+              {"classification" : "urn:lic:products:colour", "specification" : "Yellow"},
+              {"classification" : "urn:lic:products:size", "specification" : "Large"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id" : "/product/products/hdx-tamperproof-cattle-deer-rfid",
+      "relation" : "bundled",
+      "name": "Allflex HDX Nait Eid Tag",
+      "product_type" : "product",
+      "offering_type": "urn:lic:id:offering_type:good",
+      "family": "urn:lic:id:product_family:tag",
+      "description": "Allflex HDX Nait Eid Tag",
+      "invoice_description": "Allflex HDX Nait Eid Tag",
+      "supplier_url": "https://api1.accp.mindainfo.io/supplier/suppliers/allflex",
+      "configuration_properties" : [
+        {
+          "@type" : "property",
+          "id" : "urn:lic:id:confreq:nait_tag_prod_type",
+          "name" : "NAIT Production Type",
+          "properties" : [
+            {
+              "id" : "https://api1.accp.mindainfo.io/configuration/config_value_sets/fc583abf-9d15-467a-bd4c-0394ed430800/properties/86f82af4-1a67-4076-8484-67e083dc2392",
+              "@type" : "property_value",
+              "id" : "urn:nait:ids:production_type:dairy",
+              "value" : "dairy"
+            }
+          ]
+        },
+        {
+          "@type" : "property",
+          "id" : "urn:lic:id:confreq:nait_number",
+          "name": "NAIT number",
+          "properties" : [
+            {
+              "id" : "https://api1.accp.mindainfo.io/configuration/config_value_sets/fc583abf-9d15-467a-bd4c-0394ed430800/properties/86f82af4-1a67-4076-8484-67e083dc2392",
+              "@type" : "property_value",
+              "id" : "urn:lic:agriop:species:cattle",
+              "value" : "cattle"
+            }
+          ]
+        },
+        {
+          "@type" : "property",
+          "id" : "urn:lic:id:confreq:species",
+          "name" : "Tag species, required to be provided to NAIT",
+          "properties" : [
+            {
+              "id" : "https://api1.accp.mindainfo.io/configuration/config_value_sets/fc583abf-9d15-467a-bd4c-0394ed430800/properties/86f82af4-1a67-4076-8484-67e083dc2392",
+              "@type" : "property_value",
+              "id" : "urn:lic:id:confreq:nait_number",
+              "value" : "12345"
+            }
+          ]
+        }
+      ],
+      "selected_variant" : {},
+      "products" : [
+        {
+          "id" : "/product/products/allflex-tamperproof-tag/components/hdx_nait_tamperproof_cattle_female_eid",
+          "relation" : "made_up_of",
+          "name": "Allflex EID Female Component",
+          "product_type" : "component",
+          "offering_type": "urn:lic:id:offering_type:good",
+          "family": "urn:lic:id:product_family:tag",
+          "description": "Allflex HDX Nait Eid Female Component",
+          "invoice_description": "Allflex HDX Nait Eid Female Component",
+          "supplier_url": "https://api1.accp.mindainfo.io/supplier/suppliers/allflex",
+          "configuration_requirements" : [],
+          "selected_variant" : {}
+        },
+        {
+          "id" : "/product/products/allflex-tamperproof-tag/components/nait_long_stem_male_button",
+          "relation" : "made_up_of",
+          "name": "Allflex EID Female Component",
+          "product_type" : "component",
+          "offering_type": "urn:lic:id:offering_type:good",
+          "family": "urn:lic:id:product_family:tag",
+          "description": "Allflex HDX Nait Eid Male Long Stem Button Component",
+          "invoice_description": "Allflex HDX Nait Eid Male Long Stem Button Component",
+          "supplier_url": "https://api1.accp.mindainfo.io/supplier/suppliers/allflex",
+          "configuration_requirements" : [],
+          "selected_variant" : {}
+        }
+      ]
+    }
+  ]
+}
